@@ -145,7 +145,7 @@ export default function Workout() {
     const setTitle = (newTitle) => {
         const modifiedTitleMap = {
             ...titleMap,
-            [day]: {title: newTitle}
+            [day]: newTitle
         };
         localStorage.setItem('titleMap', JSON.stringify(modifiedTitleMap));
         setTitleMap(modifiedTitleMap);
@@ -171,6 +171,11 @@ export default function Workout() {
 
         const storedTitleMap = JSON.parse(localStorage.getItem('titleMap'));
         if (storedTitleMap) {
+            for (const val of Object.values(storedTitleMap)) {
+                if (typeof val === 'object' && val !== null) {
+                    localStorage.removeItem('titleMap');
+                }
+            }
             setTitleMap(storedTitleMap);
         }
 
@@ -179,10 +184,6 @@ export default function Workout() {
             setExercises(storedExercises);
         }
     }, [])
-
-//    useEffect(() => {
-//        setSelectedIndexTitle(day.index)
-//    }, [titleMap])
 
     const handleChangeSet = (setId: number, newReps: number, newWeight: number) => {
         const modifiedExercises = {
