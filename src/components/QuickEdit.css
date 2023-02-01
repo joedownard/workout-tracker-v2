@@ -1,0 +1,19 @@
+.ModifierContainer {
+    display: flex;
+
+    align-items: center;
+}
+
+.Title {
+    flex: 2;
+}
+
+.Modifiers {
+    flex: 3;
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 28px;
+    font-weight: bold;
+}

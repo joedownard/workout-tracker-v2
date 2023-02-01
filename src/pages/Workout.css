@@ -1,0 +1,51 @@
+.RootContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.PaddedContainer {
+    height: 100%;
+    width: 90%;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: -20px;
+}
+
+.EditableTitle {
+    margin-right: 20px;
+}
+
+.PanelsContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.LeftPanel {
+    flex: 11;
+    width: 100%;
+}
+
+.RightPanel {
+    flex: 9;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.AddExercise {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 32px;
+}

@@ -1,0 +1,14 @@
+.Sets {
+    margin-top: -20px;
+    margin-left: 10px;
+
+    font-size: 18px;
+}
+
+.DoneSet {
+    color: green;
+}
+
+.PendingSet {
+    color: orange;
+}

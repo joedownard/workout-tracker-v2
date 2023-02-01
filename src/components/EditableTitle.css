@@ -1,0 +1,26 @@
+.Popup {
+    position: fixed;
+    background: rgb(217, 217, 217, 1);
+
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: justify;
+}
+
+textarea {
+    width: 80%;
+    height: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+    font-size: 24px;
+}
