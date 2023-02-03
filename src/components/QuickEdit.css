@@ -2,6 +2,9 @@
     display: flex;
 
     align-items: center;
+
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 .Title {

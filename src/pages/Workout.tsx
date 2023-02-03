@@ -203,20 +203,22 @@ export default function Workout() {
     }
 
     const incrementSetStat = (setId: number, repDiff: number, weightDiff: number) => {
-        const modifiedExercises = {
-            ...exercises,
-            [day]: exercises[day].map(ex => {
-                return {
-                    ...ex,
-                    sets: ex.sets.map(set => {
-                        if (set.id !== setId) return set;
-                        return {id: setId, reps: set.reps + repDiff, weight: set.weight + weightDiff};
-                    })
-                }
-            })
-        };
-        setExercises(modifiedExercises);
-        localStorage.setItem('exercises', JSON.stringify(modifiedExercises));
+        setExercises(prevExercises => {
+            const modifiedExercises = {
+                ...prevExercises,
+                [day]: prevExercises[day].map(ex => {
+                    return {
+                        ...ex,
+                        sets: ex.sets.map(set => {
+                            if (set.id !== setId) return set;
+                            return {id: setId, reps: set.reps + repDiff, weight: set.weight + weightDiff};
+                        })
+                    }
+                })
+            };
+            localStorage.setItem('exercises', JSON.stringify(modifiedExercises));
+            return modifiedExercises
+        });
     }
 
     const handleAddExercise = () => {
@@ -231,7 +233,7 @@ export default function Workout() {
     }
 
     return (
-        <div className="RootContainer">
+            <div className="RootContainer">
             <div className="PaddedContainer">
                 <div className="Header">
                     <div className="EditableTitle"> <EditableTitle title={titleMap[day]} setTitle={setTitle}/> </div>
